@@ -34,9 +34,21 @@ Verificar se as portas de entrada da nossa aplicação back end funciona de pont
    - Trabalhar com o TS em relação ao processo de build
    - Usa por de baixo dos panos o esBuild
    - Configurar no package.json o comando de build:
-     - "build": "tsup src"
-     - "build": "tsup src --out-dir build" (Troca o nome de dist para build)
-     - rodar o comando npm run build
-   - Agora devo conseguir rodar meu servidor normalmente em js: node build/server.js
+     - `"build": "tsup src"`
+     - `"build": "tsup src --out-dir build"` (Troca o nome de dist para build)
+     - rodar o comando `npm run build`
+   - Agora devo conseguir rodar meu servidor normalmente em js: `node build/server.js`
    - O nosso eslint está reclamando do arquivo build, mas não faz sentido ele ficar verificando o arquivo de build, para fazer com que ele ignore criamos um arquivo .eslintignore e colocamos o nome da pasta
    - A pasta de build precisa estar no gitignore
+
+## Deploy do app no Render
+
+- 3 melhores opções:
+  1. Render
+  2. Fly.io (Mais complexo para iniciantes)
+  3. Railway
+
+- escolhemos o Render
+  1.  Primeira coisa que vamos fazer vai ser criar o banco de dados
+  2.  Vamos mudar nosso banco de dados para o Postgress (pois na plataforma de deploy é oq suporta)
+  3.  Vamos instalar a dependencia do postgress em nosso projeto `npm i pg` Ela não vai ser uma dependencia de desenvolvimento, pois vamos utiliza-la em produção
